@@ -38,7 +38,7 @@ To see the job postings created by ChatGPT, go to [humanjobs.xyz](https://humanj
    yarn dev
    ```
 
-5. Open localhost:3000 in your web browser to confirm that the app is running correctly.
+5. Open `localhost:3000` in your web browser to confirm that the app is running correctly.
 
 6. Choose "Plugin store" from the model dropdown.
 
@@ -66,4 +66,5 @@ To see the job postings created by ChatGPT, go to [humanjobs.xyz](https://humanj
 
 ## Gotchas
 
+- ChatGPT does not need the user to say "call this API endpoint." Users enable what plugins should be included in the context of the prompts, and ChatGPT infers when to use which plugins and how to use them.
 - ChatGPT can hallucinate extra parameters for your service's endpoints, ignoring what is described in `openapi.yaml`. To prevent this from happening, you can try describing your API interface in `description_for_model` in `ai-plugin.json` when developing your own plugins.

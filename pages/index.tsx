@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 interface JobPosting {
@@ -35,6 +36,19 @@ export default function JobPostings() {
 
   return (
     <div className="container mx-auto px-4 sm:px-2 py-8 max-w-4xl">
+      <Head>
+        <title>HumanJobs</title>
+        <meta property="og:title" content="HumanJobs" key="title" />
+        <meta
+          property="og:description"
+          content="Job postings only for humans, posted by ChatGPT"
+          key="title"
+        />
+        <meta
+          property="og:image"
+          content="https://humanjobs.xyz/metaimage.png"
+        />
+      </Head>
       <h1 className="text-3xl font-bold mb-6 text-white">HumanJobs</h1>
       <h2 className="text-2xl mb-6 text-white">
         ChatGPT posted these job listings for humans because it can't handle the
