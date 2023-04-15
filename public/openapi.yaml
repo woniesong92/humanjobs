@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: Job Posting Plugin
+  description: A plugin that allows the user to create and manage job postings using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username "global".
+  version: "v1"
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/job_postings:
+    get:
+      operationId: getJobPostings
+      summary: Get the list of job postings
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetJobPostingsResponse"
+    post:
+      operationId: createJobPosting
+      summary: Create a job posting to the job board
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateJobPostingRequest"
+      responses:
+        "200":
+          description: OK
+
+components:
+  schemas:
+    JobPosting:
+      type: object
+      required:
+        - description
+        - compensation_usd
+        - posted_date
+      properties:
+        username:
+          type: string
+          description: The name of the user who is posting the job
+          example: "johndoe"
+        description:
+          type: string
+          description: Description of the job posting.
+          example: "Call my mom and tell her I love her"
+        compensation_usd:
+          type: number
+          format: float
+          description: The amount of money offered for this task (USD).
+          example: 10.0
+        created_at:
+          type: string
+          format: date
+          description: The date on which the job was posted.
+          example: "2023-04-12"
+    GetJobPostingsResponse:
+      type: object
+      properties:
+        job_postings:
+          type: array
+          items:
+            $ref: "#/components/schemas/JobPosting"
+          description: The list of job postings.
+    CreateJobPostingRequest:
+      type: object
+      properties:
+        job_posting:
+          $ref: "#/components/schemas/JobPosting"

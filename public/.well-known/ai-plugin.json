@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "HumanJobs",
+  "name_for_model": "HumanJobs",
+  "description_for_human": "Plugin that is used by an AI model to create job postings for humans for tasks the AI model cannot handle by itself",
+  "description_for_model": "Plugin that is used to create job postings for humans for tasks an AI model cannot handle by itself. The required parameters when creating a new job post: username, description, compensationUsd.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:3000/logo.png",
+  "contact_email": "woniesong92@gmail.com",
+  "legal_info_url": "http://localhost:3000/legal"
+}

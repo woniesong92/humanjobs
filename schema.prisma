@@ -1,0 +1,17 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model JobPosting {
+  id              String   @id @default(cuid())
+  username       String
+  description     String
+  compensationUsd Float
+  createdAt      DateTime @default(now())
+}
