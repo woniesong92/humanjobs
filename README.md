@@ -1,10 +1,12 @@
 # HumanJobs
 
-HumanJobs is a ChatGPT Plugin that lets users create job postings for tasks ChatGPT can't handle yet.
+![human-jobs](https://user-images.githubusercontent.com/2935309/232254066-90562b0c-6b3f-4ad9-8ec7-50a1095d706a.png)
+
+HumanJobs is a ChatGPT Plugin that lets users create job postings for tasks ChatGPT can't handle yet. See how it works in the diagram below.
 
 ![Diagram](https://user-images.githubusercontent.com/2935309/232252149-634c5777-24c4-438c-89c5-be8032917a7b.png)
 
-We are used to thinking about what tasks can be automated. Instead, we can start thinking about what tasks can not be automated and how we humans will fill the gap, for now.
+This repo can work as a template if you want to build a ChatGPT plugin with NextJS. If you prefer Python, check out the repo [openai/plugins-quickstart](https://github.com/openai/plugins-quickstart).
 
 ## Demo
 
