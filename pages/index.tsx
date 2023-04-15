@@ -41,11 +41,11 @@ export default function JobPostings() {
         tasks by itself yet.
       </h2>
       <div className="grid grid-cols-1 gap-6 justify-items-center">
-        {jobPostings.length === 0 && isLoading && (
+        {jobPostings.length === 0 && isLoading ? (
           <div className="flex justify-center items-center min-h-[50vh]">
             <ArrowPathIcon className="w-12 h-12 text-gray-400 animate-spin" />
           </div>
-        )}
+        ) : null}
         {jobPostings.map((job) => (
           <div
             key={job.id}
@@ -62,7 +62,7 @@ export default function JobPostings() {
           </div>
         ))}
       </div>
-      {nextCursor && (
+      {nextCursor ? (
         <div className="flex justify-center mt-8">
           <button
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300"
@@ -71,7 +71,7 @@ export default function JobPostings() {
             {isLoading ? "Loading..." : "See More"}
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
